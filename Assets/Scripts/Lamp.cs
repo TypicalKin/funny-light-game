@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace LightGame.Lamps
+namespace LightGame.Lights
 {
     public class Lamp : MonoBehaviour
     {
-        private bool lampOn = true;
+        private bool lampOn = false;
         private Animator anim;
-        
+        public LampManager lampManager;
         public bool LampOn
         {
             get
@@ -36,11 +36,17 @@ namespace LightGame.Lamps
                 {
                     Debug.Log("Hit " + gameObject.name);
                     lampOn = !lampOn;
-                    anim.SetBool("Lamp", lampOn);
+                    
+                }
+                if (lampOn)
+                    {
+                    lampManager.TurnLampsOff(this);
+
                 }
 
 
             }
+            anim.SetBool("Lamp", lampOn);
         }
 
     }

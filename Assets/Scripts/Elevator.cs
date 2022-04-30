@@ -34,7 +34,7 @@ public class Elevator : MonoBehaviour
             {
                 Debug.Log("Drag " + gameObject.name);
             Vector3 elevatorPos = new Vector3(transform.position.x, mousePos.y + startDragPos.y, 0);
-            if (Camera.main.WorldToViewportPoint(elevatorPos).y < 1.0 && Camera.main.WorldToViewportPoint(elevatorPos).y > 0.0)
+            if (Camera.main.WorldToViewportPoint(elevatorPos).y < 0.9 && Camera.main.WorldToViewportPoint(elevatorPos).y > 0.25)
 
             {
                 transform.position = new Vector2(transform.position.x, mousePos.y + startDragPos.y);
