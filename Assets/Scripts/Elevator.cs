@@ -33,19 +33,19 @@ public class Elevator : MonoBehaviour
             if (isDragging)
             {
                 Debug.Log("Drag " + gameObject.name);
+            Vector3 elevatorPos = new Vector3(transform.position.x, mousePos.y + startDragPos.y, 0);
+            if (Camera.main.WorldToViewportPoint(elevatorPos).y < 1.0 && Camera.main.WorldToViewportPoint(elevatorPos).y > 0.0)
+
+            {
                 transform.position = new Vector2(transform.position.x, mousePos.y + startDragPos.y);
+            }
             }
             if (Input.GetMouseButtonUp(0))
             {
                 //end drag
                 isDragging = false;
-           // }
-            //thing to prevent a softlock
-            //if (mousePos.y > 1) ;
-            //transform.position = new Vector2(transform.position.x, mousePos.y = 1);
-            //{
-                
-            }
+
+        }
         }
 
     }
