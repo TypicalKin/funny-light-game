@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace LightGame.Lights
+
 {
     public class Lamp : MonoBehaviour
     {
@@ -36,7 +37,7 @@ namespace LightGame.Lights
                 {
                     Debug.Log("Hit " + gameObject.name);
                     lampOn = !lampOn;
-                    
+
                 }
                 if (lampOn)
                     {
